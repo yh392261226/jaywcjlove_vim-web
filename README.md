@@ -1,13 +1,16 @@
 
 ![vim-web](./vim-web-logo.png)
 
-===
+----
 
 Only tested on Mac OSx
 
 <img align="center" src="./vim-web.gif">
 
 ## 目录
+
+<details>
+<summary>点击展开目录菜单</summary>
 
 - [安装](#安装)
   - [查看配置位置](#查看配置位置)
@@ -61,18 +64,20 @@ Only tested on Mac OSx
 - [错误处理](#错误处理)
 - [参考资料](#参考资料)
 
+</details>
+
 ## 安装
 
 最新版本的Vim 7.4+  使用(`brew install macvim`)安装，vim 版本更新 `brew install macvim --override-system-vim`
 
-### 查看配置位置
+#### 查看配置位置
 
 ```shell
 # 进入vim输入下面字符
 :echo $MYVIMRC
 ```
 
-### 下载vim-web
+#### 下载vim-web
 
 将插件以及配置下载到 `~/.vim/` 目录中，这个目录是存放所有插件和配置的地方。vimscript是vim自己的一套脚本语言，通过这种脚本语言可以实现与 vim 交互，达到功能扩展的目的。一组 vimscript 就是一个 vim 插件，vim 的很多功能都由各式插件实现。
 
@@ -83,7 +88,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 $ mkdir ~/.vim/plugged
 ```
 
-### 下载安装插件
+#### 下载安装插件
 
 安装`~/.vimrc` 中配置的插件，这个过程需要很长时间。
 
@@ -94,7 +99,7 @@ $ vim # 在vim中运行 ":PlugInstall"
 
 ```
 
-### 安装依赖
+#### 安装依赖
 
 部分插件需要安装一些软件，vim的部分插件才起作用。
 
