@@ -259,7 +259,6 @@ dfx # 删除文本直到字符“x”（包括字符“x”）: delete forward x
 这里的快捷键是我配置好的可用的。
 
 ```bash
-;fl # 换出菜单列表
 nw  # 窗口切换
 ;lw # 跳转至右方的窗口
 ;hw # 跳转至左方的窗口
@@ -271,7 +270,7 @@ gt # 后一个Tab标签
 gT # 前一个Tab标签
 ;q # 关闭一个标签
 
-;fl # 显示文件菜单 file list
+;fl # 【显示文件菜单】 file list
 ;bn # 正向遍历 buffer
 ;bp # 逆向遍历（光标必须在 buffer 列表子窗口外）
 ;bd # 关闭当前buffer（光标必须在 buffer 列表子窗口外）
