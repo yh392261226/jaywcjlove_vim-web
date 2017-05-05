@@ -65,10 +65,10 @@ usage () {
   echo " VimWeb install script : ${Version}v0.1.0"
   echo " "
   echo -e "  ${Blue}Install VimWeb for vim${Color_off}"
-  echo "  curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install.sh | bash"
+  echo "  curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash"
   echo " "
   echo -e "  ${Blue}Uninstall VimWeb${Color_off}"
-  echo "  curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install.sh | bash -s -- uninstall"
+  echo "  curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash -s -- uninstall"
   echo " "
 }
 
