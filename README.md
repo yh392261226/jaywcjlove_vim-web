@@ -88,6 +88,15 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 $ mkdir ~/.vim/plugged
 ```
 
+#### 脚本下载安装
+
+```bash
+# 安装 vim-web
+curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash
+# 卸载 vim-web
+curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash -s -- uninstall
+```
+
 #### 下载安装插件
 
 安装`~/.vimrc` 中配置的插件，这个过程需要很长时间。
