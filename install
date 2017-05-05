@@ -65,7 +65,7 @@ usage () {
   echo " VimWeb install script : ${Version}v0.1.0"
   echo " "
   echo -e "  ${Blue}Install VimWeb for vim${Color_off}"
-  echo "  curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash"
+  echo "  curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash -s -- install"
   echo " "
   echo -e "  ${Blue}Uninstall VimWeb${Color_off}"
   echo "  curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash -s -- uninstall"
@@ -83,10 +83,10 @@ need_cmd () {
 fetch_repo () {
   if [[ -d "$HOME/.VimWeb" ]]; then
       git --git-dir "$HOME/.VimWeb/.git" pull
-      echo -e "${Blue}Successfully update VimWeb${Color_off}"
+      echo -e "${Blue}Successfully update .VimWeb${Color_off}"
   else
       git clone https://github.com/jaywcjlove/vim-web.git "$HOME/.VimWeb"
-      echo -e "${Blue}Successfully clone VimWeb${Color_off}"
+      echo -e "${Blue}Successfully clone .VimWeb${Color_off}"
   fi
 }
 

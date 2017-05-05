@@ -92,7 +92,7 @@ $ mkdir ~/.vim/plugged
 
 ```bash
 # 安装 vim-web
-curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash
+curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash -s -- install
 # 卸载 vim-web
 curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | bash -s -- uninstall
 ```
