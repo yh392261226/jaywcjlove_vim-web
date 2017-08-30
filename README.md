@@ -14,7 +14,6 @@ Only tested on Mac OSx
 
 - [安装](#安装)
 - [插件管理](#插件管理)
-- [启动Vim](#启动vim)
 - [理解Vim](#理解vim)
 - [常用快捷键](#常用快捷键)
 - [基础使用](#基础使用)
@@ -147,6 +146,16 @@ $ yum install ctags
 
 </details>
 
+<details>
+<summary>6. 启动Vim</summary>
+打开命令行，输入命令行启动 `vim`。
+
+```bash
+$ vim
+```
+
+</details>
+
 ## 插件管理
 
 这里面刚开始使用的Vim插件管理工具[VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim.git)，后面为了大家安装方便，使用了 [junegunn/vim-plug](https://github.com/junegunn/vim-plug)，这个插件管理工具，俺十分不喜欢，多了个 `autoload` 目录，安装过程也奇丑无比，安装快速，所以就使用它吧，下面命令更新安装的 `plug.vim`，默认已经有了不需要这一步。
@@ -189,18 +198,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 </details>
 
-## 启动Vim
-
-```bash
-$ vim
-```
-
 ## 理解Vim
 
 这部分来源 [一起来说 Vim 语](http://www.jianshu.com/p/a361ce8c97bc)，理解此部分是需要你已经了解了 Vim 的几种常用的工作模式（正常模式、插入模式、命令模式等）
 
 <details>
-<summary>动词</summary>
+<summary>动词理解</summary>
 
 动词代表了我们打算对文本进行什么样的操作。例如：
 
@@ -215,7 +218,7 @@ v # 表示选取visual select
 </details>
 
 <details>
-<summary>名词</summary>
+<summary>名词理解</summary>
 
 名词代表了我们即将处理的文本。Vim 中有一个专门的术语叫做 [文本对象] text object，下面是一些文本对象的示例：
 
@@ -230,7 +233,7 @@ t # 表示一个 HTML 标签tag
 </details>
 
 <details>
-<summary>介词</summary>
+<summary>介词理解</summary>
 
 介词界定了待编辑文本的范围或者位置。
 
@@ -244,7 +247,7 @@ f # 表示到...位置上 forward
 </details>
 
 <details>
-<summary>数词</summary>
+<summary>数词理解</summary>
 
 数词指定了待编辑文本对象的数量，从这个角度而言，数词也可以看作是一种介词。引入数词之后，文本编辑命令的语法就升级成了下面这样：
 
@@ -275,7 +278,7 @@ d2w  # 删除两个单词：delete two words
 </details>
 
 <details>
-<summary>组词为句</summary>
+<summary>组词为句理解</summary>
 
 有了这些基本的语言元素，我们就可以着手构造一些简单的命令了。文本编辑命令的基本语法如下：
 
