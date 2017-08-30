@@ -72,7 +72,7 @@ Only tested on Mac OSx
 
 
 <details>
-<summary><b>查看配置位置</b></summary>
+<summary>查看配置位置</summary>
 
 ```shell
 # 进入vim输入下面字符
@@ -82,7 +82,7 @@ Only tested on Mac OSx
 </details>
 
 <details>
-<summary><b>下载vim-web</b></summary>
+<summary>下载vim-web</summary>
 
 将插件以及配置下载到 `~/.vim/` 目录中，这个目录是存放所有插件和配置的地方。vimscript是vim自己的一套脚本语言，通过这种脚本语言可以实现与 vim 交互，达到功能扩展的目的。一组 vimscript 就是一个 vim 插件，vim 的很多功能都由各式插件实现。
 
@@ -105,7 +105,7 @@ curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | 
 </details>
 
 <details>
-<summary><b>插件下载安装</b></summary>
+<summary>插件下载安装</summary>
 
 安装`~/.vimrc` 中配置的插件，这个过程需要很长时间。
 
@@ -119,7 +119,7 @@ $ vim # 在vim中运行 ":PlugInstall"
 </details>
 
 <details>
-<summary><b>安装依赖</b></summary>
+<summary>安装依赖</summary>
 
 部分插件需要安装一些软件，vim的部分插件才起作用。
 
@@ -151,12 +151,14 @@ $ yum install ctags
 </details>
 
 
-
-**界面字体设置**
+<details>
+<summary>界面字体设置</summary>
 
 `vim-powerline`状态栏主题，界面箭头需要安装[Powerline字体](https://github.com/powerline/fonts) （在我Mac上安装的是Sauce Code Powerline字体），下载安装完成之后，还需要你在命令行工具中设置该字体。
 
 在iTerm2中设置方法：`Command+,` 进入偏好设置（Preferences）=> Profiles => Default(自己的主题配置) => Non-ASCII Font => Change Font(选择字体)
+
+</details>
 
 ## 插件管理
 
