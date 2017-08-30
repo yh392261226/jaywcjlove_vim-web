@@ -13,21 +13,9 @@ Only tested on Mac OSx
 <summary>点击展开目录菜单</summary>
 
 - [安装](#安装)
-  - [查看配置位置](#查看配置位置)
-  - [下载vim-web](#下载vim-web)
-  - [下载安装插件](#下载安装插件)
-  - [安装依赖](#安装依赖)
 - [插件管理](#插件管理)
-  - [安装插件](#安装插件)
-  - [更新插件](#更新插件)
-  - [卸载插件](#卸载插件)
 - [启动Vim](#启动vim)
-- [Vim理解](#vim理解)
-  - [动词](#动词)
-  - [名词](#名词)
-  - [介词](#介词)
-  - [数词](#数词)
-  - [组词为句](#组词为句)
+- [理解Vim](#理解vim)
 - [常用快捷键](#常用快捷键)
 - [基础使用](#基础使用)
   - [快捷键通配符](#快捷键通配符)
@@ -72,7 +60,7 @@ Only tested on Mac OSx
 
 
 <details>
-<summary>查看配置位置</summary>
+<summary>1. 查看配置位置</summary>
 
 ```shell
 # 进入vim输入下面字符
@@ -82,7 +70,7 @@ Only tested on Mac OSx
 </details>
 
 <details>
-<summary>下载vim-web</summary>
+<summary>2. 下载vim-web</summary>
 
 将插件以及配置下载到 `~/.vim/` 目录中，这个目录是存放所有插件和配置的地方。vimscript是vim自己的一套脚本语言，通过这种脚本语言可以实现与 vim 交互，达到功能扩展的目的。一组 vimscript 就是一个 vim 插件，vim 的很多功能都由各式插件实现。
 
@@ -105,7 +93,7 @@ curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | 
 </details>
 
 <details>
-<summary>插件下载安装</summary>
+<summary>3. 插件下载安装</summary>
 
 安装`~/.vimrc` 中配置的插件，这个过程需要很长时间。
 
@@ -119,7 +107,7 @@ $ vim # 在vim中运行 ":PlugInstall"
 </details>
 
 <details>
-<summary>安装依赖</summary>
+<summary>4. 安装插件依赖</summary>
 
 部分插件需要安装一些软件，vim的部分插件才起作用。
 
@@ -150,9 +138,8 @@ $ yum install ctags
 
 </details>
 
-
 <details>
-<summary>界面字体设置</summary>
+<summary>5. 界面字体设置</summary>
 
 `vim-powerline`状态栏主题，界面箭头需要安装[Powerline字体](https://github.com/powerline/fonts) （在我Mac上安装的是Sauce Code Powerline字体），下载安装完成之后，还需要你在命令行工具中设置该字体。
 
@@ -169,7 +156,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-### 安装插件
+<details>
+<summary>安装插件</summary>
 
 将配置信息其加入 `~/.vim/.vimrc` 中的`call plug#begin()` 和 `call plug#end()` 之间，最后进入 vim 输入下面命令，摁 `enter` 进行安装。
 
@@ -177,7 +165,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 :PlugInstall
 ```
 
-### 更新插件
+</details>
+
+<details>
+<summary>更新插件</summary>
 
 插件更新频率较高，差不多每隔一个月你应该看看哪些插件有推出新版本，批量更新，只需启动Vim执行下面更新命令即可更新插件。
 
@@ -185,7 +176,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 :PlugUpdate
 ```
 
-### 卸载插件
+</details>
+
+<details>
+<summary>卸载插件</summary>
 
 先在 .vimrc 中注释或者删除对应插件配置信息，然后在 vim 中执行下面命令，即可删除对应插件。
 
@@ -193,17 +187,20 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 :PlugClean
 ```
 
+</details>
+
 ## 启动Vim
 
 ```bash
 $ vim
 ```
 
-## Vim理解
+## 理解Vim
 
 这部分来源 [一起来说 Vim 语](http://www.jianshu.com/p/a361ce8c97bc)，理解此部分是需要你已经了解了 Vim 的几种常用的工作模式（正常模式、插入模式、命令模式等）
 
-### 动词
+<details>
+<summary>动词</summary>
 
 动词代表了我们打算对文本进行什么样的操作。例如：
 
@@ -215,7 +212,10 @@ y # 表示复制yank
 v # 表示选取visual select
 ```
 
-### 名词
+</details>
+
+<details>
+<summary>名词</summary>
 
 名词代表了我们即将处理的文本。Vim 中有一个专门的术语叫做 [文本对象] text object，下面是一些文本对象的示例：
 
@@ -227,7 +227,10 @@ t # 表示一个 HTML 标签tag
 引号或者各种括号所包含的文本称作一个文本块。
 ```
 
-### 介词
+</details>
+
+<details>
+<summary>介词</summary>
 
 介词界定了待编辑文本的范围或者位置。
 
@@ -238,7 +241,10 @@ t # 表示到...位置前 to
 f # 表示到...位置上 forward
 ```
 
-### 数词
+</details>
+
+<details>
+<summary>数词</summary>
 
 数词指定了待编辑文本对象的数量，从这个角度而言，数词也可以看作是一种介词。引入数词之后，文本编辑命令的语法就升级成了下面这样：
 
@@ -266,7 +272,10 @@ d2w  # 删除两个单词：delete two words
 3x  # 三次删除字符（等价于删除三个字符）：three times delete character
 ```
 
-### 组词为句
+</details>
+
+<details>
+<summary>组词为句</summary>
 
 有了这些基本的语言元素，我们就可以着手构造一些简单的命令了。文本编辑命令的基本语法如下：
 
@@ -284,6 +293,8 @@ caw # 修改一个单词: change around word
 dtx # 删除文本直到字符“x”（不包括字符“x”）: delete to x
 dfx # 删除文本直到字符“x”（包括字符“x”）: delete forward x
 ```
+
+</details>
 
 ## 常用快捷键
 
