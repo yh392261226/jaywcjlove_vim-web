@@ -988,6 +988,7 @@ map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>        " 恢复快捷
 - [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) 多光标编辑功能
 - [gen_tags.vim](https://github.com/jsfaint/gen_tags.vim) 生成，加载，更新ctags/gtags文件。
 - [ybian/smartim](https://github.com/ybian/smartim) 解决中文输入法下面无法使用命令
+- [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF) 模糊查找神器，性能超越ctrlp
 
 #### 代码书写
 
