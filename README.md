@@ -12,13 +12,18 @@ Only tested on Mac OSx
 <details>
 <summary>点击展开目录菜单</summary>
 
+<!-- TOC -->
+
+- [目录](#目录)
 - [安装](#安装)
 - [插件管理](#插件管理)
 - [理解Vim](#理解vim)
 - [常用快捷键](#常用快捷键)
+- [基本配置说明](#基本配置说明)
 - [基础使用](#基础使用)
   - [快捷键通配符](#快捷键通配符)
   - [插入命令](#插入命令)
+  - [删除命令](#删除命令)
   - [定位命令](#定位命令)
   - [复制剪切](#复制剪切)
   - [多光标编辑](#多光标编辑)
@@ -28,28 +33,30 @@ Only tested on Mac OSx
   - [整页翻页](#整页翻页)
   - [开关注释](#开关注释)
   - [工程文件菜单](#工程文件菜单)
+    - [切割窗口](#切割窗口)
   - [Tab操作](#tab操作)
-  - [HTML操作](#html操作)
-  - [代码片段补全](#代码片段补全)
+    - [多tab窗口拆分](#多tab窗口拆分)
+    - [tab切换](#tab切换)
+    - [HTML操作](#html操作)
+    - [代码片段补全](#代码片段补全)
 - [搜索查找替换](#搜索查找替换)
-  + [搜索](#替换)
-    + [文件搜索](#文件搜索)
-    + [搜索文本内容](#搜索文本内容)
-    + [快速移动](#快速移动)
-  + [替换](#替换)
-    + [替换取消](#替换取消)
-    + [快捷替换](#快捷替换)
-    + [精确替换](#精确替换)
+  - [搜索](#搜索)
+  - [替换](#替换)
 - [文件恢复](#文件恢复)
 - [多文档编辑](#多文档编辑)
+- [环境恢复](#环境恢复)
 - [插件列表](#插件列表)
-  - [主题风格](#主题风格)
-  - [使用界面](#使用界面)
-  - [管理项目](#管理项目)
-  - [代码书写](#代码书写)
-  - [代码阅读](#代码阅读)
+    - [插件管理工具](#插件管理工具)
+    - [主题风格](#主题风格)
+    - [使用界面](#使用界面)
+    - [管理项目](#管理项目)
+    - [代码书写](#代码书写)
+    - [代码阅读](#代码阅读)
 - [错误处理](#错误处理)
 - [参考资料](#参考资料)
+- [其它人的vimrc配置](#其它人的vimrc配置)
+
+<!-- /TOC -->
 
 </details>
 
@@ -300,7 +307,7 @@ dfx # 删除文本直到字符“x”（包括字符“x”）: delete forward x
 
 ## 常用快捷键
 
-这里的快捷键是我配置好的可用的。
+这里的快捷键大部分是配置好的可用的，还有一部分是Vim自带的快捷键。
 
 <details>
 <summary>大小写切换</summary>
@@ -475,6 +482,116 @@ zR # 所有代码折叠取消
 
 </details>
 
+## 基本配置说明
+
+<details>
+<summary>取消备份</summary>
+
+```vim
+set nobackup
+set noswapfile
+```
+
+</details>
+
+<details>
+<summary>文件编码</summary>
+
+```vim
+set encoding=utf-8
+```
+
+</details>
+
+<details>
+<summary>显示行号</summary>
+
+```vim
+set number  " 开启行号显示
+            " 显示绝对行号      set number
+            " 取消显示绝对行号   set nonumber
+            " 显示相对行号       set relativenumber
+            " 取消显示相对行号   set norelativenumber
+```
+
+</details>
+
+<details>
+<summary>显示状态栏</summary>
+
+```vim
+set laststatus=2   " 总是显示状态栏
+```
+
+</details>
+
+<details>
+<summary>高亮显示当前 - 行/列/搜索结果</summary>
+
+```vim
+set cursorline    " 高亮显示当前 - 行
+set cursorcolumn  " 高亮显示当前 - 列
+set hlsearch      " 高亮显示搜索结果
+```
+
+</details>
+
+<details>
+<summary>取消换行</summary>
+
+```vim
+set nowrap
+```
+
+</details>
+
+<details>
+<summary>设置鼠标操作</summary>
+
+```vim
+set mouse=a    " 设置鼠标滚动
+"set mouse=v   " 若要使用鼠标复制内容到剪切板
+```
+
+</details>
+
+<details>
+<summary>设置缩进</summary>
+
+```vim
+set cindent
+set tabstop=2
+set shiftwidth=2
+```
+
+</details>
+
+<details>
+<summary>光标定位行显示设置</summary>
+
+```vim
+" set scrolloff=7   " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
+" :se so=7          " 上面配置的简写
+:se so=999          " 总在中间
+```
+
+</details>
+
+<details>
+<summary>定义快捷键</summary>
+
+```vim
+" 定义快捷键的前缀，即 <Leader>
+let mapleader=";"
+
+nmap LB 0     " 定义快捷键到行首 / “)” 页尾
+nmap LE $     " 定义快捷键到行尾
+
+vnoremap <Leader>y "+y      " 设置快捷键将选中文本块复制至系统剪贴板
+nnoremap <Leader>p "+p      " 设置快捷键将系统剪贴板内容粘贴至vim
+```
+
+</details>
 
 ## 基础使用
 
@@ -776,7 +893,8 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>" " 配向后跳转快捷键
 
 ### 搜索
 
-#### 文件搜索
+<details>
+<summary>文件搜索</summary>
 
 搜索有两个插件可以使用 [wincent/command-t](https://github.com/wincent/command-t) 和 [junegunn/fzf](https://github.com/junegunn/fzf)，`fzf`没有下载下来，这里在使用 `command-t` ，使用的时候记得，进入目录 `cd ~/.vim/plugged/command-t` 运行 `rake make`。
 
@@ -784,7 +902,10 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>" " 配向后跳转快捷键
 ;t # 启动搜索文件
 ```
 
-#### 搜索文本内容
+</details>
+
+<details>
+<summary>搜索文本内容</summary>
 
 [dyng/ctrlsf.vim](https://github.com/dyng/ctrlsf.vim)，在插件完成安装之后，需要安装另外的工具，才能运行
 
@@ -885,7 +1006,10 @@ vim搜索时默认是大小写敏感的，要想实现大小写不敏感的搜�
 set ignorecase
 ```
 
-#### 快速移动
+</details>
+
+<details>
+<summary>文本中快速移动</summary>
 
 [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 把满足条件的位置用 [;A~Za~z] 间的标签字符标出来，找到你想去的位置再键入对应标签字符即可快速到达。
 
@@ -896,9 +1020,12 @@ set ignorecase
 ;;F # 光标前代码定位 <搜索自负> 出现定位信息
 ```
 
+</details>
+
 ### 替换 
 
-#### 替换取消
+<details>
+<summary>替换取消</summary>
 
 ```bash
 r # → 取代关闭所在处字符  
@@ -907,7 +1034,10 @@ u # → 取消上一步操作
 ctrl + r # → 返回上一步  
 ```
 
-#### 快捷替换
+</details>
+
+<details>
+<summary>快捷替换</summary>
 
 可视化模式下选中其中一个，接着键入 ctrl-n，你会发现第二个该字符串也被选中了，持续键入 ctrl-n，你可以选中所有相同的字符串，把这个功能与 ctrlsf 结合。这个功能是上面已经提过的 [多光标编辑](#多光标编辑) 的一个插件提供的功能。默认的快捷键已经被替换掉了，`ctrl-n` 替换成了 `shift-n`，跳过选中`ctrl-k` 换成了`shift-n`。
 
@@ -916,7 +1046,11 @@ let g:multi_cursor_next_key='<S-n>' " 选中下一个相同内容
 let g:multi_cursor_skip_key='<S-k>' " 跳过当前这个选中
 ```
 
-#### 精确替换
+</details>
+
+
+<details>
+<summary>精确替换</summary>
 
 vim 有强大的内容替换命令，进行内容替换操作时，注意：如何指定替换文件范围、是否整词匹配、是否逐一确认后再替换。
 
@@ -935,6 +1069,8 @@ vim 有强大的内容替换命令，进行内容替换操作时，注意：如�
 
 `:21,27s/^/#/g` 行首替换`#`替换（增加）掉  
 `:ab mymail asdf@qq.com` 输入`mymail` 摁下空格自动替换成`asdf@qq.com`  
+
+</details>
 
 ## 文件恢复
 
