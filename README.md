@@ -1,21 +1,19 @@
 
-![vim-web](./vim-web-logo.png)
+<p align="center"><img height="80" src="./vim-web-logo.png" /></p>
 
-----
-
-Only tested on Mac OSx
+<p align="center">Only tested on Mac OSx</p>
 
 <img align="center" src="./vim-web.gif">
 
-## 目录
+目录
+===
 
 <details>
 <summary>点击展开目录菜单</summary>
 
 <!-- TOC -->
 
-- [目录](#目录)
-- [安装](#安装)
+- [安装Vim-Web](#安装vim-web)
 - [插件管理](#插件管理)
 - [理解Vim](#理解vim)
 - [常用快捷键](#常用快捷键)
@@ -46,12 +44,6 @@ Only tested on Mac OSx
 - [多文档编辑](#多文档编辑)
 - [环境恢复](#环境恢复)
 - [插件列表](#插件列表)
-    - [插件管理工具](#插件管理工具)
-    - [主题风格](#主题风格)
-    - [使用界面](#使用界面)
-    - [管理项目](#管理项目)
-    - [代码书写](#代码书写)
-    - [代码阅读](#代码阅读)
 - [错误处理](#错误处理)
 - [参考资料](#参考资料)
 - [其它人的vimrc配置](#其它人的vimrc配置)
@@ -60,7 +52,7 @@ Only tested on Mac OSx
 
 </details>
 
-## 安装
+## 安装Vim-Web
 
 最新版本的Vim 7.4+  使用(`brew install macvim`)安装，vim 版本更新 `brew install macvim --override-system-vim`
 
@@ -1048,7 +1040,6 @@ let g:multi_cursor_skip_key='<S-k>' " 跳过当前这个选中
 
 </details>
 
-
 <details>
 <summary>精确替换</summary>
 
@@ -1148,18 +1139,25 @@ map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>        " 恢复快捷
 
 这里面所有的插件，并不是都放到了我的 [.vimrc](./.vimrc) 文件中 .vimrc 配置文件中，是我个人喜欢并且习惯的配置。
 
-#### 插件管理工具
+<details>
+<summary>插件管理工具</summary>
 
 - [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 - [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 
-#### 主题风格
+</details>
+
+<details>
+<summary>主题风格</summary>
 
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) 主题风格素雅 solarized
 - [molokai](https://github.com/tomasr/molokai) 主题风格多彩 molokai
 - [phd](https://github.com/vim-scripts/phd) 主题风格复古 phd
 
-#### 使用界面
+</details>
+
+<details>
+<summary>使用界面</summary>
 
 - [Mango](https://github.com/goatslacker/mango.vim) A nice color scheme
 - [VimAirline](https://github.com/bling/vim-airline) 美化状态栏偏好设置
@@ -1167,7 +1165,10 @@ map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>        " 恢复快捷
 - [vim-airline](https://github.com/vim-airline/vim-airline) 美化状态栏和配置
 - [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) airline主题
 
-#### 管理项目
+</details>
+
+<details>
+<summary>管理项目</summary>
 
 - [NERDTree](https://github.com/scrooloose/nerdtree) Manage your project files
 - [VimFugitive](https://github.com/tpope/vim-fugitive) Git 集成
@@ -1186,7 +1187,10 @@ map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>        " 恢复快捷
 - [ybian/smartim](https://github.com/ybian/smartim) 解决中文输入法下面无法使用命令
 - [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF) 模糊查找神器，性能超越ctrlp
 
-#### 代码书写
+</details>
+
+<details>
+<summary>代码书写</summary>
 
 - [NERDCommenter](https://github.com/scrooloose/nerdcommenter) 注释更容易
 - [DrawIt](https://github.com/vim-scripts/DrawIt) ASCII art 风格的注释
@@ -1216,7 +1220,11 @@ map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>        " 恢复快捷
 - [othree/xml.vim](https://github.com/othree/xml.vim) 中/提供快速编写xml/html的能力，如标签自动闭合等
 - [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript) 提供js代码的智能缩进，仅使用了他的indent功能
 
-#### 代码阅读
+</details>
+
+
+<details>
+<summary>代码阅读</summary>
 
 - 语法高亮
   - [vim-polyglot](https://github.com/sheerun/vim-polyglot) 支持常见的语法高亮
@@ -1232,6 +1240,8 @@ map <leader>rs :source my.vim<cr> :rviminfo my.viminfo<cr>        " 恢复快捷
 - [JavaScriptLibrariesSyntax](https://github.com/othree/javascript-libraries-syntax.vim) 语法高亮的知名的JS库
 - [ultisnips](https://github.com/SirVer/ultisnips) 模板补全插件
 - [vim-protodef](https://github.com/derekwyatt/vim-protodef) 根据类声明自动生成类实现的代码框架
+
+</details>
 
 ## 错误处理
 
