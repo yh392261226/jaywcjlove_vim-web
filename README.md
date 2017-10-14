@@ -57,19 +57,8 @@ Only tested on Mac OSx
 
 最新版本的Vim 7.4+  使用(`brew install macvim`)安装，vim 版本更新 `brew install macvim --override-system-vim`
 
-
 <details>
-<summary>1. 查看配置位置</summary>
-
-```shell
-# 进入vim输入下面字符
-:echo $MYVIMRC
-```
-
-</details>
-
-<details>
-<summary>2. 下载vim-web</summary>
+<summary>1. 下载vim-web</summary>
 
 将插件以及配置下载到 `~/.vim/` 目录中，这个目录是存放所有插件和配置的地方。vimscript是vim自己的一套脚本语言，通过这种脚本语言可以实现与 vim 交互，达到功能扩展的目的。一组 vimscript 就是一个 vim 插件，vim 的很多功能都由各式插件实现。
 
@@ -92,9 +81,19 @@ curl -sLf https://raw.githubusercontent.com/jaywcjlove/vim-web/master/install | 
 </details>
 
 <details>
+<summary>2. 查看配置位置</summary>
+
+```shell
+# 进入vim输入下面字符
+:echo $MYVIMRC
+```
+
+</details>
+
+<details>
 <summary>3. 插件下载安装</summary>
 
-安装`~/.vimrc` 中配置的插件，这个过程需要很长时间。
+下载安装 `~/.vimrc` 中配置的插件，这个过程需要很长时间。
 
 ```shell
 # 上面执行完成之后
@@ -303,6 +302,20 @@ dfx # 删除文本直到字符“x”（包括字符“x”）: delete forward x
 
 这里的快捷键是我配置好的可用的。
 
+<details>
+<summary>大小写切换</summary>
+
+```bash
+U # 选中 - 变大写 
+u # 选中 - 变小写
+~ # 选中 - 变大写变小写，小写变大写
+```
+
+</details>
+
+<details>
+<summary>窗口菜单和Tab操作</summary>
+
 ```bash
 nw  # 窗口切换
 ;lw # 跳转至右方的窗口
@@ -320,6 +333,16 @@ gT # 前一个Tab标签
 ;bp # 逆向遍历（光标必须在 buffer 列表子窗口外）
 ;bd # 关闭当前buffer（光标必须在 buffer 列表子窗口外）
 ;bb # 你之前所在的前一个 buffer）
+```
+
+</details>
+
+<details>
+<summary>快速文本内定位和移动</summary>
+
+```bash
+0   # 行首
+$   # 行尾
 
 ctrl + y # 向上一行
 ctrl + e # 向下一行
@@ -331,7 +354,19 @@ ctrl + b # 上一页 b 就是`backward`
 ctrl + o # 上一个光标的位置
 ctrl + i # 下一个光标的位置
 
-# 书签设定, 标记并跳转
+# 快速文本内定位
+;;b # 光标前代码定位
+;;e # 光标后代码定位
+;;f # 光标后代码定位 <搜索自负> 出现定位信息
+;;F # 光标前代码定位 <搜索自负> 出现定位信息
+```
+
+</details>
+
+<details>
+<summary>书签设定, 标记并跳转</summary>
+
+```bash
 ma  # 设定/取消当前行名为 x 的标签
 m,  # 自动设定下一个可用书签名
 mda # 删除当前文件中所有独立书签
@@ -340,34 +375,24 @@ mn  #按行号前后顺序，跳转至下个独立书签；
 mp  #按行号前后顺序，跳转至前个独立书签。
 'a  # 跳到书签
 '.  # 最后一次编辑的地方
+```
 
+</details>
 
-;t # 通过搜索文件打开文件
+<details>
+<summary>列选中编辑</summary>
 
-# 快速文本内定位
-;;b # 光标前代码定位
-;;e # 光标后代码定位
-;;f # 光标后代码定位 <搜索自负> 出现定位信息
-;;F # 光标前代码定位 <搜索自负> 出现定位信息
-
-;ilt # 设置显示／隐藏标签列表子窗口(函数列表)的快捷键。速记：identifier list by tag
-
-0   # 行首
-$   # 行尾
-
-:r ~/git/R.js # 将文件内容导入到该文件中
-:!which ls  # 找命令不推出vim运行命令
-:!date      # 查看编辑时间
-:r !date    # 将当前编辑时间导入当前文本光标所在行
-
-U # 选中 - 变大写 
-u # 选中 - 变小写
-~ # 选中 - 变大写变小写，小写变大写
-
-# 列选中编辑
+```bash
 Ctrl+v   # 进入选中模式，`hjkl`方向键选择片区
 Shift＋i # 进入列选择批量编辑
+```
 
+</details>
+
+<details>
+<summary>代码注释相关操作</summary>
+
+```bash
 ;cc # 代码注释"//"
 ;cm # 代码段落注释"/**/"
 ;ci # 注释相反，注释的取消注释，没注释的注释
@@ -375,17 +400,28 @@ Shift＋i # 进入列选择批量编辑
 ;c$ # 光标开始到行结束的位置注释
 ;cA # 在行尾部添加注释符"//"
 ;cu # 取消代码注释
+```
 
+</details>
+
+<details>
+<summary>文本编辑搜索等操作</summary>
+
+```bash
 xp  # 左右交换光标处两字符的位置
 :200,320 join # 合并第200~320行
 J  # 选中多行合并
+
+:r ~/git/R.js # 将文件内容导入到该文件中
+:r !date    # 将当前编辑时间导入当前文本光标所在行
+:!date      # 查看编辑时间
 
 ;sp # 选中搜索 - 文本中选中关键字
     # normal模式下 选中搜索 - 文本中选中关键字
 ;sl # 选中搜索 - 结果列表
 
-;y # 复制到剪切板
-y  # 复制
+;y  # 复制到剪切板
+y   # 复制
 yy  # 复制当前行
 nyy # n表示大于1的数字，复制n行
 yw  # 从光标处复制至一个单子/单词的末尾，包括空格
@@ -395,26 +431,50 @@ y0  # 从当前光标位置（不包括光标位置）复制之行首
 y3l # 从光标位置（包括光标位置）向右复制3个字符
 y5G # 将当前行（包括当前行）至第5行（不包括它）复制
 y3B # 从当前光标位置（不包括光标位置）反向复制3个单词
-.  # 粘贴
-p  # 粘贴
+.   # 粘贴
+p   # 粘贴
 
 # 多光标编辑
 Shift+n # 选中下一个相同字符
 Shift+k # 跳过当前选中的字符
 
+:1,24s/header/www/g  # 第1到24行将header替换成www
+```
+
+</details>
+
+<details>
+<summary>代码折叠缩进等操作</summary>
+
+```bash
 za # 单个代码折叠
 zM # 折叠左右代码
 zR # 所有代码折叠取消
 ;i   # 开/关缩进可视化- 代码缩进关联线条
 ;ig  # 上一条效果一样
 
->   # 代码锁进 - 选中摁尖括号
-<   # 代码锁进 - 选中摁尖括号
+>   # 代码缩进 - 选中摁尖括号
+<   # 代码缩进 - 选中摁尖括号
+```
 
-:1,24s/header/www/g  # 第1到24行将header替换成www
+</details>
+
+<details>
+<summary>其它一些快捷键</summary>
+
+
+```bash
+;t # 通过搜索文件打开文件
+
+;ilt # 设置显示／隐藏标签列表子窗口(函数列表)的快捷键。速记：identifier list by tag
+
+:!which ls  # 找命令不推出vim运行命令
 
 <c-z>  # 退出Vim
 ```
+
+</details>
+
 
 ## 基础使用
 
