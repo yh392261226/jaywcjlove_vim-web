@@ -85,7 +85,7 @@ fetch_repo () {
       git --git-dir "$HOME/.VimWeb/.git" pull
       echo -e "${Blue}Successfully update .VimWeb${Color_off}"
   else
-      git clone https://github.com/jaywcjlove/vim-web.git "$HOME/.VimWeb"
+      git clone https://github.com/jaywcjlove/vim-web.git "$HOME/.VimWeb" --depth=1 --recurse-submodules
       echo -e "${Blue}Successfully clone .VimWeb${Color_off}"
   fi
   curl -LSso ~/.VimWeb/autoload/pathogen.vim https://tpo.pe/pathogen.vim
