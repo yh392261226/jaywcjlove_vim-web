@@ -88,6 +88,10 @@ fetch_repo () {
       git clone https://github.com/jaywcjlove/vim-web.git "$HOME/.VimWeb"
       echo -e "${Blue}Successfully clone .VimWeb${Color_off}"
   fi
+  curl -LSso ~/.VimWeb/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+  echo -e "${Blue}Successfully download ~/.VimWeb/autoload/pathogen.vim${Color_off}"
+  curl -LSso ~/.VimWeb/colors/molokai.vim https://raw.githubusercontent.com/fatih/molokai/master/colors/molokai.vim
+  echo -e "${Blue}Successfully download ~/.VimWeb/colors/molokai.vim${Color_off}"
 }
 
 if [ $# -gt 0 ]
