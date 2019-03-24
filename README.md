@@ -386,6 +386,14 @@ vim搜索时默认是大小写敏感的，要想实现大小写不敏感的搜�
 set ignorecase
 ```
 
+## 文件搜索
+
+搜索文件有多个插件 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim)、[Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF)、[wincent/command-t](https://github.com/wincent/command-t) 和 [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)，这里使用的 [Ctrlp](https://github.com/kien/ctrlp.vim) 使用 <kbd>Ctrl</kbd><kbd>p</kbd> 启动文件搜索。
+
+```bash
+<ctrl+p> # 启动搜索
+```
+
 ## 插件列表
 
 这里面所有的插件，并不是都放到了我的 [.vimrc](./.vimrc) 文件中 .vimrc 配置文件中，是我个人喜欢并且习惯的配置。

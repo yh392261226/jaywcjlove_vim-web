@@ -39,17 +39,15 @@ install_vim () {
     if [[ -d "$HOME/.vimrc" ]]; then
         if [[ "$(readlink $HOME/.vimrc)" =~ \.vimrc$ ]]; then
             echo -e "${Blue}Installed .vimrc for vim${Color_off}"
-            # mv "$HOME/.vimrc" "$HOME/.vimrc_back"
-            # echo -e "${Blue}BackUp $HOME/.vimrc${Color_off}"
         else
             mv "$HOME/.vimrc" "$HOME/.vimrc_back"
             echo -e "${Blue}BackUp $HOME/.vimrc${Color_off}"
             ln -s "$HOME/.VimWeb/.vimrc" "$HOME/.vimrc"
-            echo -e "${Blue}Installed VimWeb/.vimrc for vim${Color_off}"
+            echo -e "${Blue}Installed .VimWeb/.vimrc for vim${Color_off}"
         fi
     else
         ln -s "$HOME/.VimWeb/.vimrc" "$HOME/.vimrc"
-        echo -e "${Blue}Installed VimWeb/.vimrc for vim${Color_off}"
+        echo -e "${Blue}Installed .VimWeb/.vimrc for vim${Color_off}"
     fi
 }
 

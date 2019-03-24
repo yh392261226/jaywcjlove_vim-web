@@ -89,3 +89,26 @@ nmap <Leader>tt :TagbarToggle<CR>
 " >>>=========插件 vim-easymotion 配置============
 map <Leader> <Plug>(easymotion-prefix)
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+" >>>=========插件 ctrlpvim/ctrlp.vim 配置============
+" 在没有显式启动目录的情况下调用时，
+" CtrlP 将根据此变量设置其本地工作目录：
+" a - 当前文件的目录，除非它是cwd的子目录
+" r - 包含以下目录或文件之一的当前文件的最近祖先：.git .hg .svn .bzr _darcs
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+" 忽略 .gitignore 中的文件
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" 使用 Vim 的 wildignore 和 CtrlP 自己的g `:ctrlp_custom_ignore` 排除文件和目录。
+" 如果正在使用自定义列表命令，则会忽略排除项：
+let g:ctrlp_custom_ignore = '\v(node_modules)'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
