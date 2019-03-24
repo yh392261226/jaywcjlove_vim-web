@@ -47,6 +47,10 @@ set confirm
 
 set mouse=a         " 设置鼠标滚动
 
+" set scrolloff=7   " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
+" :se so=7          " 上面配置的简写
+:se so=999          " 总在中间
+
 " 缩进
 set expandtab       " 将制表符扩展为空格
 set tabstop=2       " 设置编辑时制表符占用空格数
