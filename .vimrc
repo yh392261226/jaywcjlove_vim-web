@@ -45,6 +45,8 @@ set hlsearch      " 高亮显示搜索结果
 " 在处理未保存或只读文件的时候，弹出确认 
 set confirm
 
+set mouse=a         " 设置鼠标滚动
+
 " 缩进
 set expandtab       " 将制表符扩展为空格
 set tabstop=2       " 设置编辑时制表符占用空格数
@@ -110,5 +112,21 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
+  \ }
+" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+" >>>=========插件 Xuyuanp/nerdtree-git-plugin 配置============
+let g:NERDTreeIndicatorMapCustom = {
+  \ "Modified"  : "✹",
+  \ "Staged"    : "✚",
+  \ "Untracked" : "✭",
+  \ "Renamed"   : "➜",
+  \ "Unmerged"  : "═",
+  \ "Deleted"   : "✖",
+  \ "Dirty"     : "✗",
+  \ "Clean"     : "✔︎",
+  \ 'Ignored'   : '☒',
+  \ "Unknown"   : "?"
   \ }
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
