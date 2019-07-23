@@ -1,6 +1,10 @@
 # Created by https://www.gitignore.io/api/vim
 # Edit at https://www.gitignore.io/?templates=vim
 
+colors/*
+bundle/*
+autoload/*
+
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
