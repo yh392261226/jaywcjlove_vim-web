@@ -530,6 +530,7 @@ set ignorecase
   - [vim-polyglot](https://github.com/sheerun/vim-polyglot) 支持常见的语法高亮
   - [VimJson](https://github.com/elzr/vim-json) JSON 高亮和隐藏引号
   - [vim-jsx](https://github.com/mxw/vim-jsx) JSX语法高亮
+  - [vim-jsx-typescript](https://github.com/peitalin/vim-jsx-typescript) TSX 语法高亮
   - [YaJS](https://github.com/othree/yajs.vim) JavaScript 语法 (ES5 and ES6)
   - [vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax) CSS3 高亮，包括stylus,Less,Sass
   - [vim-css-color](https://github.com/skammer/vim-css-color) css高亮颜色
