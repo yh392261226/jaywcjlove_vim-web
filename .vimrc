@@ -44,6 +44,8 @@ set hlsearch      " 高亮显示搜索结果
 
 " 在处理未保存或只读文件的时候，弹出确认 
 set confirm
+set mouse=a    " 设置鼠标滚动
+:se so=999          " 总在中间
 
 set mouse=a         " 设置鼠标滚动
 
