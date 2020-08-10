@@ -547,7 +547,6 @@ set ignorecase
 ## 参考资料
 
 - [vim 大冒险：在游戏中学习 vim](http://vim-adventures.com/)
-- [VimScript学会如何自定义Vim编辑器](http://learnvimscriptthehardway.onefloweroneworld.com/)
 - [一起来说 Vim 语](http://www.jianshu.com/p/a361ce8c97bc)
 - [css-color stopped working after updating Vim to 7.4](https://github.com/ap/vim-css-color/issues/29)
 - [我的VIM配置及说明【K-VIM】](http://www.wklken.me/posts/2013/06/11/linux-my-vim.html)
