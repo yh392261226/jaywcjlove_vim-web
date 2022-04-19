@@ -6,6 +6,7 @@
 
 <img align="center" src="./vim-web.gif">
 <!--idoc:ignore:start-->
+
 目录
 ===
 
@@ -562,8 +563,6 @@ set ignorecase
 - [barretlee/autoconfig-mac-vimrc](https://github.com/barretlee/autoconfig-mac-vimrc/blob/master/.vimrc)
 
 <!--idoc:config:
-site: Vim Web
-keywords: vim,vim-web,web
 logo: ./vim.svg
 favicon: "./vim.svg"
 footer: |
